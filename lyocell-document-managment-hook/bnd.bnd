@@ -1,0 +1,7 @@
+Bundle-Name: lyocell-document-managment-hook
+Bundle-SymbolicName: lyocell.document.managment.hook
+Bundle-Version: 1.0.0
+#Web-ContextPath: /PectecDocumentManagmentDispalyContext
+-jsp: *.jsp,*.jspf
+-plugin.jsp: com.liferay.ant.bnd.jsp.JspAnalyzerPlugin
+-sources: true
