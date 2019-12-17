@@ -174,7 +174,7 @@ if ((row == null) && portletName.equals(DLPortletKeys.MEDIA_GALLERY_DISPLAY)) {
 						url="<%= moveURL %>"
 					/>
 					<!-- Copy Menu action Item code -->
-					<%-- <portlet:renderURL var="copyURL">
+					<portlet:renderURL var="copyURL">
 						<portlet:param name="mvcRenderCommandName" value="/document_library/move_entry" />
 						<portlet:param name="redirect" value="<%= redirect %>" />
 						<portlet:param name="repositoryId" value="<%= String.valueOf(repositoryId) %>" />
@@ -185,7 +185,7 @@ if ((row == null) && portletName.equals(DLPortletKeys.MEDIA_GALLERY_DISPLAY)) {
 					<liferay-ui:icon
 						message="copy"
 						url="<%= copyURL %>" 
-					/>--%>
+					/>
 				</c:if>
 
 				<c:if test="<%= DLFolderPermission.contains(permissionChecker, scopeGroupId, folderId, ActionKeys.ADD_FOLDER) && !folder.isMountPoint() %>">
