@@ -40,7 +40,7 @@ DLAdminManagementToolbarDisplayContext dlAdminManagementToolbarDisplayContext = 
 		 dropdownItem.setHref(toolCopyURL.toString());
 		// dropdownItem.putData("action", "copy");
          dropdownItem.setIcon("copy");
-         dropdownItem.setLabel("copy");
+         dropdownItem.setLabel("Copy");
          dropdownItem.setQuickAction(true);
 		 dropDownItems.add(dropdownItem);
 		
@@ -84,7 +84,7 @@ function copyFilesAndFoldersURL(){
 			if($(this).parent().parent().hasClass("active") || 
 		    		  $(this).parent().parent().parent().hasClass("active") || 
 		    		  $(this).parent().parent().parent().parent().hasClass("active")){
-						if(!selectedFolders.includes($(this).val())){
+						if(selectedFolders.indexOf($(this).val())==-1){
 					    	  selectedFolders.push($(this).val());  
 					      }
 					}else{
@@ -101,7 +101,7 @@ function copyFilesAndFoldersURL(){
 			    		  $(this).parent().parent().parent().hasClass("active") || 
 			    		  $(this).parent().parent().parent().parent().hasClass("active")){
 			    	  
-						if(!selectedFileEntries.includes($(this).val())){
+						if(selectedFileEntries.indexOf($(this).val())==-1){
 							selectedFileEntries.push($(this).val());  
 					      }
 					}else{

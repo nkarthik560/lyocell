@@ -184,7 +184,7 @@ if (portletTitleBasedNavigation && (folderId != DLFolderConstants.DEFAULT_PARENT
 								rowURL.setParameter("fileEntryId", String.valueOf(fileEntry.getFileEntryId()));
 								// Custmization start for replacing the above url into WAB url
 								String _downloadWABURL=DLUtil.getWebDavURL(themeDisplay, fileEntry.getFolder(), fileEntry); 
-								//System.out.println("icon _downloadWABURL: "+_downloadWABURL);
+								System.out.println("icon _downloadWABURL: "+_downloadWABURL);
 								%>
 
 								<c:choose>
@@ -199,6 +199,7 @@ if (portletTitleBasedNavigation && (folderId != DLFolderConstants.DEFAULT_PARENT
 											title="<%= latestFileVersion.getTitle() %>"
 											url="<%= (_downloadWABURL != null) ? _downloadWABURL : null %>"
 										>
+										
 											<%@ include file="/document_library/file_entry_vertical_card.jspf" %>
 										</liferay-frontend:icon-vertical-card>
 									</c:when>
@@ -555,6 +556,9 @@ request.setAttribute("edit_file_entry.jsp-checkedOut", true);
 $(document).ready(function(){
 	$("div.doc-new-tab .lfr-card-title-text a,td.doc-new-tab a, h4.doc-new-tab a").each(function(){
 		$(this).attr("target","_blank");
+		var _hrefCust="ms-excel:ofe|u|"+$(this).attr("href");
+		$(this).attr("href",_hrefCust);
+		//<a href="ms-word:ofe|u|">Open Document in Word</a>
 	});
 	<%-- $("ul.dropdown-menu  a").each(function(){
 		var _href=$(this).attr("href");
