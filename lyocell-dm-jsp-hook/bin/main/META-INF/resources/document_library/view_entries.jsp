@@ -214,9 +214,11 @@ if (portletTitleBasedNavigation && (folderId != DLFolderConstants.DEFAULT_PARENT
 											title="<%= latestFileVersion.getTitle() %>"
 											url="<%= (_downloadWABURL != null) ? _downloadWABURL : null %>"
 										>
+										
 											<%@ include file="/document_library/file_entry_vertical_card.jspf" %>
 										</liferay-frontend:vertical-card>
 									</c:otherwise>
+									
 								</c:choose>
 							</liferay-ui:search-container-column-text>
 						</c:when>
